@@ -1,8 +1,8 @@
 
 var max = 0;
 var steps = 10;
-var username = 'test@hua.gr';
-var password = '1234';
+var username = '';
+var password = '';
 
 
 var GetChartData = function () {
@@ -69,8 +69,8 @@ $(document).ready(function() {
 
 var max = 0;
 var steps = 10;
-var username = 'test@hua.gr';
-var password = '1234';
+var username = '';
+var password = '';
 
 var GetChartDataNtw = function () {
     $.ajax({
@@ -147,8 +147,8 @@ $(document).ready(function() {
 
 var max = 0;
 var steps = 10;
-var username = 'test@hua.gr';
-var password = '1234';
+var username = '';
+var password = '';
 
 
 var GetChartDataStats = function () {
@@ -245,8 +245,8 @@ $(document).ready(function () {
 // ======== Measurements with Date range and Network Type  ======= //
 var max = 0;
 var steps = 10;
-var username = 'test@hua.gr';
-var password = '1234';
+var username = '';
+var password = '';
 
 var getChartDataSelection = function () {
     $.ajax({
@@ -338,8 +338,8 @@ var getChartDataSelection = function () {
 // ======== Measurements with only Date range ======= //
 var max = 0;
 var steps = 10;
-var username = 'test@hua.gr';
-var password = '1234';
+var username = '';
+var password = '';
 
 var getDateRangeChart = function () {
     $.ajax({
@@ -458,8 +458,8 @@ if (($('#iMeasurements').val() == "levelStats" || $('#iMeasurements').val() == "
 
 var max = 0;
 var steps = 10;
-var username = 'test@hua.gr';
-var password = '1234';
+var username = '';
+var password = '';
 
 var GetChartDataOS = function () {
     $.ajax({
