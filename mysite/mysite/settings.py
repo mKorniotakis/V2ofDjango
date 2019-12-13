@@ -85,9 +85,9 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_WHITELIST = (
-    'localhost',
-    '127.0.0.1',
-    'test.hua.gr',
+    'http://localhost',
+    'http://127.0.0.1',
+    'http://test.hua.gr',
 )
 
 
@@ -116,7 +116,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'mysite.wsgi.application'
+# WSGI_APPLICATION = 'mysite.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
@@ -129,8 +129,8 @@ DATABASES = {
                     'sslmode': 'require',
                     },
         'NAME': 'globedb',
-        'USER': '',
-        'PASSWORD': '',
+        'USER': 'cr',
+        'PASSWORD': 'left_cr',
         'HOST': 'test.hua.gr',
         'PORT': '',
     },
@@ -140,8 +140,8 @@ DATABASES = {
                     'sslmode': 'require',
                     },
         'NAME': 'Measurements',
-        'USER': '',
-        'PASSWORD': '',
+        'USER': 'cr',
+        'PASSWORD': 'left_cr',
         'HOST': 'test.hua.gr',
         'PORT': '',
     }

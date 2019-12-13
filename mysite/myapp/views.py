@@ -88,7 +88,7 @@ class OperatorView(viewsets.ModelViewSet):
         return queryset
 
 
-class MeasurementsView(generics.ListAPIView):
+class MeasurementsView(generics.ListCreateAPIView):
     authentication_classes = (JSONWebTokenAuthentication, SessionAuthentication, BasicAuthentication)
     permission_classes = (IsAuthenticatedOrReadOnly,)
     queryset = Measurements.objects.all()[:50]
