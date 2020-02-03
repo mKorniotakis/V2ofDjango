@@ -130,7 +130,7 @@ DATABASES = {
                     },
         'NAME': 'globedb',
         'USER': 'cr',
-        'PASSWORD': 'left_R',
+        'PASSWORD': '*******',
         'HOST': 'test.hua.gr',
         'PORT': '',
     },
@@ -141,7 +141,7 @@ DATABASES = {
                     },
         'NAME': 'Measurements',
         'USER': 'cr',
-        'PASSWORD': 'left_R',
+        'PASSWORD': '*******',
         'HOST': 'test.hua.gr',
         'PORT': '',
     }
