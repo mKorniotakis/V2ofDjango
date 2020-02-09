@@ -30,6 +30,7 @@ var GetChartData = function () {
                  data: data,
                  backgroundColor: [
                     'rgba(25, 40, 166, 0.7)', //LGE
+                    'rgba(83, 51, 237, 1)',
                     'rgba(25, 168, 98, 0.7)',
                     'rgba(220,20,60 ,0.7)',
                     'rgba(255,160,122 ,1)', //Samsung
@@ -55,6 +56,9 @@ var GetChartData = function () {
                           }, {
                             labels: labels[3],
                             data: data[3]
+                          }, {
+                            labels: labels[4],
+                            data: data[4]
 
                         }]
                })
@@ -486,6 +490,7 @@ var GetChartDataOS = function () {
                  data: data,
                  backgroundColor: [
                     'rgba(153, 102, 255, 1)',
+                    'rgba(0, 181, 204, 1)',
                     'rgba(255, 206, 86, 1)',
                     'rgba(0, 128, 0, 0.7)',
                     'rgba(255, 0, 0, 0.7)',
@@ -513,6 +518,9 @@ var GetChartDataOS = function () {
                       }, {
                         labels: labels[3],
                         data: data[3]
+                      }, {
+                        labels: labels[4],
+                        data: data[4]
 
                     }]
             })

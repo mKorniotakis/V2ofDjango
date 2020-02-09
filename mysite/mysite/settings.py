@@ -82,13 +82,17 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
-CORS_ORIGIN_WHITELIST = (
-    'http://localhost',
-    'http://127.0.0.1',
-    'http://test.hua.gr',
-)
+CORS_ORIGIN_ALLOW_ALL = True
+
+
+# CORS_ORIGIN_WHITELIST = (
+#     'http://localhost',
+#     'http://127.0.0.1',
+#     'http://test.hua.gr',
+# )
 
 
 ROOT_URLCONF = 'mysite.urls'
