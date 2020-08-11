@@ -28,9 +28,10 @@ SECRET_KEY = 'bn08prwj(9-d6l&om#zliyan&0antb&3g34sxrjhdf0(%w2)+x'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'test.hua.gr',
     'localhost',
     '127.0.0.1',
+    'mkorniotakis.ddns.net',
+    '94.64.204.101',
 ]
 
 INTERNAL_IPS = [
@@ -69,7 +70,7 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django_tables2',
     'debug_toolbar',
-    'corsheaders',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -88,12 +89,21 @@ MIDDLEWARE = [
 CORS_ORIGIN_ALLOW_ALL = True
 
 
-# CORS_ORIGIN_WHITELIST = (
-#     'http://localhost',
+#CORS_ORIGIN_WHITELIST = (
+#     'http://localhost:8080',
 #     'http://127.0.0.1',
 #     'http://test.hua.gr',
-# )
+#)
 
+
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
 
 ROOT_URLCONF = 'mysite.urls'
 
@@ -127,32 +137,29 @@ TEMPLATES = [
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'OPTIONS': {'options': '-c search_path=private,public',
-                    'sslmode': 'require',
-                    },
-        'NAME': 'globedb',
+        'OPTIONS': {'options': '-c search_path=public'},
+        'NAME': 'measurements',
         'USER': 'cr',
-        'PASSWORD': '*******',
-        'HOST': 'test.hua.gr',
+        'PASSWORD': '',
+        'HOST': 'localhost',
         'PORT': '',
     },
-    'legacyDB': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'OPTIONS': {'options': '-c search_path=public',
-                    'sslmode': 'require',
-                    },
-        'NAME': 'Measurements',
-        'USER': 'cr',
-        'PASSWORD': '*******',
-        'HOST': 'test.hua.gr',
-        'PORT': '',
-    }
+    # 'legacyDB': {
+    #     'ENGINE': 'django.contrib.gis.db.backends.postgis',
+    #     'OPTIONS': {'options': '-c search_path=public',
+    #                 'sslmode': 'require',
+    #                 },
+    #     'NAME': 'Measurements',
+    #     'USER': 'cr',
+    #     'PASSWORD': '*******',
+    #     'HOST': 'test.hua.gr',
+    #     'PORT': '',
+    # }
 
 }
 
-DATABASE_ROUTERS = ['myapp.routers.legacyDB']
+# DATABASE_ROUTERS = ['myapp.routers.legacyDB']
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -267,8 +274,6 @@ AUTHENTICATION_BACKENDS = (
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
 
-    # Needed to login by username taken from a legacy db table
-    'myapp.backend.V2OfBackend',
 )
 
 CUSTOM_USER_MODEL = 'myapp.V2OfUsers'
@@ -278,14 +283,14 @@ LOGOUT_URL = "myapp/account/logout/"
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "login"
 
-SITE_ID = 1
+SITE_ID = 2
 
 # auth and allauth settings
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+# ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 3
 ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 60
 ACCOUNT_LOGOUT_ON_GET = True
@@ -297,7 +302,7 @@ ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 # Custom form for signup
 # New method in `settings.py`
 ACCOUNT_FORMS = {
-    'signup': 'myapp.forms.CustomSignupForm'
+    'signup': 'mysite.forms.MyCustomSignupForm'
 }
 # Dictionary containing provider specific settings.
 SOCIALACCOUNT_PROVIDERS = {
